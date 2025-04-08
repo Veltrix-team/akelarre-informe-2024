@@ -1,0 +1,50 @@
+---
+import Ejemplo from "../common/components/Ejemplo.astro";
+import Layout from "../layouts/Layout.astro";
+import { Counter } from "../common/components/Counter";
+
+const title = "Componente de astro";
+const description = "Este es un componente estatico de Astro";
+const tags = ["Astro", "Home", "Página", "Inicio"];
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<!-- Usar componente ya creado y pasar props -->
+	
+	<div class="componente-astro">
+	   
+		<!-- Componente de astro -->
+		<Ejemplo 
+		   title={title} 
+		   description={description} 
+		   tags={tags} 
+	   />
+	</div>
+
+	<div class="componente-react">
+		<!-- Componente de react -->
+		 <!-- Client load indica que el componente va a cargar js -->
+		<Counter title="Componente de react" initialValue={10} client:load/>
+	</div>
+
+</Layout>
+
+<!-- Se pueden añadir estilos de esta manera pero lo ideal es teneer un archivo css por componente -->
+<style>
+
+	.componente-astro{
+		background-color: cadetblue;
+		display: grid;
+		place-items: center;
+	}
+
+	.componente-react{
+		color: white;
+		background-color: rgb(64, 131, 133);
+		display: grid;
+		place-items: center;
+	}
+
+</style>

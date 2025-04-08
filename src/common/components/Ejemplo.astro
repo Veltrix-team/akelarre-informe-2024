@@ -1,0 +1,25 @@
+---
+//Asi se declaran las propiedades de un componente
+interface Props {
+    title: string;
+    description: string;
+    tags: string[];
+}
+
+//obtenemos las propiedades
+const { title, description, tags } = Astro.props;
+---
+
+<h1>{title}</h1>
+<p>{description}</p>
+
+<ul>
+    {tags.map((tag) => <li>{tag}</li>)}
+</ul>
+
+
+<style>
+    h1{
+        margin: 0;
+    }
+</style>
